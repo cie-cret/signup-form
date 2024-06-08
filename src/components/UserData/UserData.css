@@ -1,0 +1,119 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 0;
+    margin-top: 1.5rem;
+    box-shadow: var(--Shadow);
+}
+
+.blank-box {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    width: 100%;
+}
+
+input {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 1.5rem 2.5rem 0 2.5rem;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 14px;
+    font-weight: 600;
+    &.error {
+        border: 2px solid var(--Red);
+    }
+}
+
+input:focus {
+    outline: 1px solid var(--Blue);
+    &.error {
+        outline: none;
+    }
+}
+
+.green-button {
+    background-color: var(--Green);
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    box-shadow: inset 0px -1px 2px 1px rgba(0, 0, 0, 0.2);
+
+    transition: all 100ms ease-in;
+}
+
+.green-button:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    /* transition: transform 100ms ease-in; */
+}
+
+.claim-button {
+    margin: 1.5rem 2.5rem 0.5rem 2.5rem;
+}
+
+.footer {
+    margin-bottom: 2rem;
+}
+
+.footer p {
+    color: var(--GrayishBlue);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.footer>p>span>a {
+    color: var(--Red);
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer>p>span>a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.error-empty {
+    font-size: 11px;
+    font-style: italic;
+    color: var(--Red);
+    text-align: right;
+    margin: 0.5rem 2.5rem 0 0;
+    font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+    input {
+        padding: 1rem;
+        margin: 1rem 1.5rem 0 1.5rem;
+    }
+
+    .error-empty {
+        margin: 0.5rem 1.5rem 0 0;
+    }
+
+    .claim-button {
+        margin: 1rem 1.5rem 0 1.5rem;
+    }
+
+    .footer {
+        padding: 0 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .footer p {
+        line-height: 1.5rem;
+    }
+
+    .error-empty {
+        margin: 0.5rem 1.5rem 0 0;
+    }
+}

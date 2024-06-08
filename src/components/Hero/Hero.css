@@ -1,0 +1,82 @@
+.h-container {
+    /* justify-content: space-around; */
+    color: white;
+    height: 100vh;
+}
+
+.h-left {
+    width: 35rem;
+}
+
+.h-left p {
+    color: whitesmoke;
+}
+
+.h-right {
+    width: 37rem;
+}
+
+.h-container h1 {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.purple-button {
+    background-color: var(--Blue);
+    box-shadow: var(--Shadow);
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+}
+
+.gray-text {
+    font-weight: 300;
+    color: lightgray;
+}
+
+@media (max-width: 1024px) {
+
+    body {
+        background-image: url('../../../public/bg-intro-mobile.png');
+    }
+
+    .h-container {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .h-left {
+        width: 100vw;
+        text-align: center;
+    }
+    
+    .h-container h1 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .h-left p {
+        color: whitesmoke;
+    }
+    
+    .h-right {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .purple-button {
+        padding: 1.5rem 3rem;
+    }
+
+}
