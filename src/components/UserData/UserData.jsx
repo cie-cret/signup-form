@@ -38,22 +38,44 @@ const UserData = () => {
                     type="text"
                     id="userFName"
                     placeholder='First Name'
-                    {...register("fName", { required: "First Name cannot be empty" })} />
+                    {...register("fName", { 
+                        required: "First Name cannot be empty",
+                        pattern: {
+                            value: /^[a-zA-Z].{1,}$/,
+                            message: "Looks like this is not a first name",
+                        } })} />
                     <ErrorMessage
                         errors={errors}
                         name="fName"
-                        render={({ message }) => <span className='error-empty'>{message}</span>}
+                        render={({ messages }) => {
+                            return messages? Object.entries(messages).map(([type, message]) => (
+                                <span key={type} className='error-empty'>{message}</span>
+                            ))
+                        : null;
+                        }}
                     />
                 
                 <input
                     type="text"
                     id="userLName"
                     placeholder='Last Name'
-                    {...register("lName", { required: "Last Name cannot be empty" })} />
+                    {...register("lName", { 
+                        required: "Last Name cannot be empty", 
+                        pattern: {
+                            value: /^[a-zA-Z].{1,}$/,
+                            message: "Looks like this is not a last name"
+                        }
+                        })} 
+                    />
                     <ErrorMessage
                         errors={errors}
                         name="lName"
-                        render={({ message }) => <span className='error-empty'>{message}</span>}
+                        render={({ messages }) => {
+                            return messages? Object.entries(messages).map(([type, message]) => (
+                                <span key={type} className='error-empty'>{message}</span>
+                            ))
+                        : null;
+                        }}
                     />
 
                 <input
@@ -86,8 +108,8 @@ const UserData = () => {
                     {...register("password", { 
                         required: "Password cannot be empty",
                         pattern: {
-                            value: /^(?=.*[a-z])(?=.*[0-9]).{8,}$/,
-                            message: "Password must contain at least 8 characters with a number"
+                            value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$/,
+                            message: "Password must contain at least 8 characters with a number and an uppercase"
                         }
                      })} />
                     <ErrorMessage
